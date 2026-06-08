@@ -1,14 +1,14 @@
 variable "environment" {
-  type = string
+  type        = string
   description = "The environment stage"
 }
 
 variable "lambda_arn" {
-  type = string
+  type        = string
   description = "The ARN of lambda fucntion"
 }
 
 variable "lambda_function_name" {
-  type = string
+  type        = string
   description = "The name of lambda function"
 }

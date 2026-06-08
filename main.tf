@@ -10,14 +10,14 @@ module "alerts" {
 }
 
 module "compute" {
-  source = "./modules/cost_janitor_lambda"
-  env = "dev"
+  source  = "./modules/cost_janitor_lambda"
+  env     = "dev"
   sns_arn = module.alerts.topic_arn
 }
 
 module "scheduler" {
-  source = "./modules/eventbridge_scheduler"
-  environment = "dev"
-  lambda_arn = module.compute.lambda_arn
+  source               = "./modules/eventbridge_scheduler"
+  environment          = "dev"
+  lambda_arn           = module.compute.lambda_arn
   lambda_function_name = module.compute.lambda_name
 }

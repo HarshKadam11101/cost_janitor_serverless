@@ -1,9 +1,9 @@
 variable "alert_email" {
-  type = string
+  type        = string
   description = "Email to whcih alert needs to be sent"
 }
 
 variable "environment" {
-  type = string
+  type        = string
   description = "The nevironemnt for deployement"
 }
