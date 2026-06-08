@@ -1,4 +1,4 @@
-resource "aws_cloudwatch_event_rule" "weekly_scan"{
+resource "aws_cloudwatch_event_rule" "weekly_scan" {
   name = "aws_cost_janitor-weekly_trigger-${var.environment}"
   description = "Triggers the lambda fucntion every friday"
   schedule_expression = "cron(0 12 ? * FRI *)"

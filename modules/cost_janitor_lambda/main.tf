@@ -6,7 +6,7 @@ data "archive_file" "lambda_code" {
 
 resource "aws_lambda_function" "this" {
   filename         = data.archive_file.lambda_code.output_path
-  function_name    = "cost_janoitor_function"
+  function_name    = "cost_janitor_function"
   source_code_hash = data.archive_file.lambda_code.output_base64sha256
 
   handler = "app.lambda_handler"
