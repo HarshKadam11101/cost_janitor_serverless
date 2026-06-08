@@ -1,6 +1,6 @@
-resource "aws_s3_bucket" "tfstate" {
-  bucket = "aws-cost-janitor-terraform-state-bucket"
-}
+# resource "aws_s3_bucket" "tfsate" {
+#   bucket = "aws-cost-janitor-terraform-state-bucket"
+# }
 
 module "alerts" {
   source = "./modules/sns_alerts"
