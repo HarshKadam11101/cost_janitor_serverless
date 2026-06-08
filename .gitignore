@@ -1,0 +1,7 @@
+.terraform/
+**/.terraform/*
+.venv/
+*.tfstate
+*.tfstate.*
+.idea/
+*.zip
