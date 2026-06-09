@@ -1,4 +1,5 @@
 import boto3
+import os
 
 def lambda_handler(event,context):
     ec2 = boto3.client('ec2')
@@ -32,8 +33,8 @@ def lambda_handler(event,context):
 
 # Output
 
-   if waste_report:
-        alert_message = "" AWS Cost Janitor found waste! \n\n"
+    if waste_report:
+        alert_message = "AWS Cost Janitor found waste! \n\n"
         for item in waste_report:
             alert_message += f"- {item}\n"
         
