@@ -44,9 +44,9 @@ CI/CD Pipeline: GitHub Actions
 
 Building this project from scratch exposed me to real-world edge cases that occur in production enterprise environments. Here is how I debugged and resolved them:
 
-1.The S3 Backend "Chicken and Egg" Paradox
+1. The S3 Backend "Chicken and Egg" Paradox
     The Problem: When configuring a remote S3 backend for Terraform, a classic dependency loop occurs: Terraform needs an S3 bucket to store its state file, but if you declare that same bucket inside your code, Terraform will crash trying to provision a bucket that already exists globally (BucketAlreadyExists).
-
+    
     The Fix: I decoupled the state-tracking infrastructure from the operational code. I manually bootstrapped the foundational S3 bucket, updated the backend configuration blocks, and surgically manipulated the state tracking engine using terraform state rm to bring the remote cloud architecture and local definitions into perfect harmony.
 
 2. Overcoming Git 100MB Push Restrictions
@@ -66,7 +66,7 @@ AWS CLI configured with appropriate administrator credentials.
 
 Terraform CLI installed.
 
-# Execution
+## Execution
 
 - Clone the repository:
 
